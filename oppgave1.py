@@ -5,7 +5,8 @@ import scipy.linalg as la
 import numpy as np
 import matplotlib.pyplot as plt
 
-size = 100
+size = 3
+
 l = 2*np.pi
 x = np.linspace(0, l, size)
 #h = sc.h
