@@ -5,7 +5,7 @@ import scipy.linalg as la
 import numpy as np
 import matplotlib.pyplot as plt
 
-size = 3
+size = 1000
 
 l = 2*np.pi
 x = np.linspace(0, l, size)
