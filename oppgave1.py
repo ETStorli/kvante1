@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 import scipy as sp
 import scipy.constants as sc
 
-                    # Størrelsen på matrisa
-l = 1e-9                  # En periode
+
+l = 1e-9                      # Lengde på boksen
 Dx = 1.0E-11                  # Steglengden
-x = np.arange(0, l, Dx)   # x-kooridnatene
-size = len(x)
+x = np.arange(0, l, Dx)       # x-kooridnatene
+size = len(x)                 # Størrelsen på matrisa
 V = np.zeros(size)            # Potensialet, som et array
 
 # konstanter, definert ved hjelp av scipy - biblioteket
@@ -24,7 +24,7 @@ def numSchrodinger(V, size = size):         #V må være en array
     H_subDia = np.array([-np.power(hbar, 2) / (2 * m * np.power(Dx, 2))] * (size - 1))
 #    H = diags([H_subDia, H_dia, H_subDia], [-1, 0, 1], shape=(size, size)).toarray() #Trengs kanskje ikke
     egenverdi, egenvektor = la.eigh_tridiagonal(H_dia, H_subDia)    #Gir oss egenverdiene og egenvektorene til matrisen H
-    egenverdi *= 1 / 1.60E-19           #Gjør om til elektronvolt
+    egenverdi *= 1 / sc.eV           #Gjør om til elektronvolt
 
     for i in range(len(egenvektor)):
         egenvektor_abs_pow = np.power(np.abs(egenvektor[i]), 2)
