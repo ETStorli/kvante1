@@ -18,9 +18,8 @@ m = sc.m_e
 Dx = l/len(x)
 c = sc.c
 
-
-n = np.arange(1, (size+1), 1)
-V = np.piecewise(x, [x < 0, x > l], [np.inf, np.inf, 0])
-energi_funk = np.sqrt(2/l) - np.sin((n*np.pi*x)/l)
-engeri_verdi = (n*np.pi*hbar)/(2*m*l)
-
+dx = 1.0E-11
+N = 99
+def analy(i):
+    E = (i**2*sc.pi**2*hbar**2)/(2*m*l**2)
+    return E/sc.eV
